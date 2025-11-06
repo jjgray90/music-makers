@@ -13,7 +13,7 @@ export const mockArtists = [
       genre: "Soul Band",
       image: "/artists/midnightsoul.jpg",
       bio: "Elegant soul and Motown classics performed by a 6-piece live band.",
-      youtube: "https://youtube.com/midnightsoul",
+      youtube: "https://youtube.com/",
     },
   ];
   
