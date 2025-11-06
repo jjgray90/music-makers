@@ -5,7 +5,7 @@ import { ArtistDetail } from "@/components/ArtistDetail";
 
 export default function ArtistPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
-  const artist = use(getArtistBySlug(slug));
+  const artist = getArtistBySlug(slug);
   if (!artist) return notFound();
 
   return (

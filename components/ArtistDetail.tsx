@@ -17,7 +17,7 @@ export function ArtistDetail({ artist }: { artist: Artist }) {
         alt={artist.name}
         width={600}
         height={400}
-        className="rounded-2xl mb-8 object-cover"
+        className="rounded-2xl mb-8 mx-auto"
       />
       <h1 className="text-4xl font-semibold mb-4">{artist.name}</h1>
       <p className="text-gray-600 mb-6 italic">{artist.genre}</p>

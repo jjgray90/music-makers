@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'static.wixstatic.com',
+        // Optional: you can also specify port and pathname if needed
+        // port: '',
+        // pathname: '/some/path/**', 
+      },
+    ],
+  },
 };
 
 export default nextConfig;
