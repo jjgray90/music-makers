@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'static.wixstatic.com',
+        hostname: 'cdn.sanity.io',
         // Optional: you can also specify port and pathname if needed
         // port: '',
         // pathname: '/some/path/**', 

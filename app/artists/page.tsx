@@ -1,8 +1,17 @@
-import { getAllArtists } from "@/lib/data";
+import { getArtists } from "@/lib/data";
 import { ArtistCard } from "@/components/ArtistCard";
 
+interface Artist {
+  slug: string;
+  name: string;
+  genre: string;
+  image: string;
+}
+
 export default async function ArtistsPage() {
-  const artists = await getAllArtists();
+  const artists : Artist[] = await getArtists();
+
+console.log(artists);
 
   return (
     <section className="max-w-5xl mx-auto px-6 py-16">
