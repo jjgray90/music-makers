@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
@@ -16,9 +17,16 @@ export function Navbar() {
 
   return (
     <nav className="border-b border-gray-200 bg-white/70 backdrop-blur-md sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-        <Link href="/" className="text-2xl font-serif tracking-wide">
+      <div className=" max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <Link
+          href="/"
+          className="hidden md:block text-2xl font-serif tracking-wide"
+        >
           Music<span className="text-gray-500">Makers</span>
+        </Link>
+
+        <Link href="/">
+          <Image src="/logo.jpg" alt={"hello"} width={80} height={10} />
         </Link>
 
         <button
@@ -38,7 +46,9 @@ export function Navbar() {
               key={href}
               href={href}
               className={`block mt-4 md:mt-0 ${
-                pathname === href ? "text-black font-semibold" : "hover:text-black"
+                pathname === href
+                  ? "text-black font-semibold"
+                  : "hover:text-black"
               }`}
               onClick={() => setMenuOpen(false)}
             >
