@@ -32,7 +32,7 @@ export function Navbar() {
         <div
           className={`${
             menuOpen ? "block" : "hidden"
-          } md:flex md:items-center md:space-x-8 text-gray-700 bg-white`}
+          } bg-white md:flex md:items-center md:bg-transparent md:space-x-8 text-gray-700`}
         >
           {links.map(({ href, label }) => (
             <Link
