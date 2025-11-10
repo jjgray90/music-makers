@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <nav className="h-[10vh] border-b border-gray-200 bg-white/60 backdrop-blur-md sticky top-0 z-50">
-      <div className=" max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <div className="h-[10vh] max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <Link
           href="/"
           className="hidden md:block text-2xl font-serif tracking-wide"
@@ -29,17 +29,10 @@ export function Navbar() {
           <Image src="/logo.png" alt={"Music Makers logo"} width={80} height={10} />
         </Link>
 
-        <button
-          className="md:hidden text-gray-600"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </button>
-
         <div
           className={`${
             menuOpen ? "block" : "hidden"
-          } md:flex md:items-center md:space-x-8 text-gray-700`}
+          } md:flex md:items-center md:space-x-8 text-gray-700 bg-white`}
         >
           {links.map(({ href, label }) => (
             <Link
@@ -56,6 +49,13 @@ export function Navbar() {
             </Link>
           ))}
         </div>
+
+        <button
+          className="md:hidden text-gray-600"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          ☰
+        </button>
       </div>
     </nav>
   );
