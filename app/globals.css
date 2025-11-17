@@ -6,5 +6,5 @@
 } */
 
 body {
-  @apply bg-white text-gray-900;
+  @apply bg-stone-200 text-gray-900;
 }

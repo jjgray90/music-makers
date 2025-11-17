@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { urlFor } from "@/sanity/image";
+import type { Image as SanityImage } from "sanity";
 
 interface Artist {
   slug: string;
   name: string;
   genre: string;
-  image: string;
+  image: SanityImage;
 }
 
 export function ArtistCard({ artist }: { artist: Artist }) {
@@ -15,7 +17,7 @@ export function ArtistCard({ artist }: { artist: Artist }) {
       className="group block overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition"
     >
       <Image
-        src={artist.image}
+        src={urlFor(artist.image).width(400).url()}
         alt={artist.name}
         width={400}
         height={300}

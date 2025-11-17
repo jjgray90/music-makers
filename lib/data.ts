@@ -1,9 +1,10 @@
 import { client } from "@/sanity/client";
+import type { Image as SanityImage } from "sanity";
   
   const query = `*[_type == "artist"] | order(name asc) {
     name,
     genre,
-    "image": image.asset->url,
+    image,
     "slug": slug.current,
     bio,
     instagram,
@@ -15,7 +16,7 @@ import { client } from "@/sanity/client";
     name: string;
     genre: string;
     bio: string;
-    image: string;
+    image: SanityImage;
     instagram?: string;
     youtube?: string;
   }

@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { urlFor } from "@/sanity/image";
+import type { Image as SanityImage } from "sanity";
 
 interface Artist {
   name: string;
   genre: string;
   bio: string;
-  image: string;
+  image: SanityImage;
   instagram?: string;
   youtube?: string;
 }
@@ -13,7 +15,7 @@ export function ArtistDetail({ artist }: { artist: Artist }) {
   return (
     <article className="max-w-3xl mx-auto px-6 py-16">
       <Image
-        src={artist.image}
+        src={urlFor(artist.image).width(600).url()}
         alt={artist.name}
         width={600}
         height={400}

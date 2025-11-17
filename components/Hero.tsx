@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="flex items-center justify-center h-[90vh] relative overflow-hidden bg-fixed">
+    <section className="flex items-center justify-center h-[80vh] relative overflow-hidden bg-fixed">
       {/* Background image with soft overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
