@@ -7,6 +7,7 @@ interface Artist {
   genre: string;
   bio: string;
   image: SanityImage;
+  vimeo?: string;
   instagram?: string;
   youtube?: string;
 }
@@ -30,6 +31,15 @@ export function ArtistDetail({ artist }: { artist: Artist }) {
       <h1 className="text-4xl font-semibold mb-4">{artist.name}</h1>
       <p className="text-gray-600 mb-6 italic">{artist.genre}</p>
       <p className="text-lg leading-relaxed text-gray-700">{artist.bio}</p>
+
+      <iframe
+        src={artist.vimeo}
+        width="100%"
+        height="400"
+        frameBorder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowFullScreen
+      />
 
       <div className="mt-8 flex gap-6 justify-center">
         {artist.instagram && (

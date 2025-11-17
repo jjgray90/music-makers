@@ -7,6 +7,7 @@ import type { Image as SanityImage } from "sanity";
     image,
     "slug": slug.current,
     bio,
+    vimeo,
     instagram,
     youtube
   }`;
@@ -16,6 +17,7 @@ import type { Image as SanityImage } from "sanity";
     name: string;
     genre: string;
     bio: string;
+    vimeo: string;
     image: SanityImage;
     instagram?: string;
     youtube?: string;
