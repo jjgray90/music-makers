@@ -14,7 +14,7 @@ export function ArtistCard({ artist }: { artist: Artist }) {
   return (
     <Link
       href={`/artists/${artist.slug}`}
-      className="group block overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition"
+      className="group block overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-shadow"
     >
       <Image
         src={urlFor(artist.image)
@@ -27,10 +27,10 @@ export function ArtistCard({ artist }: { artist: Artist }) {
         alt={artist.name}
         width={1600}
         height={1067}
-        className="h-64 w-full object-cover group-hover:scale-105 transition-transform"
+        className="h-64 w-full object-cover transition-transform group-hover:scale-105"
       />
       <div className="p-4 text-center bg-white">
-        <h3 className="text-xl font-medium group-hover:text-black">
+        <h3 className="text-xl font-medium transition-colors group-hover:text-black">
           {artist.name}
         </h3>
         <p className="text-gray-500">{artist.genre}</p>

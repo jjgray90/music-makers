@@ -27,22 +27,22 @@ export function ContactForm() {
         type="text"
         placeholder="Your Name"
         required
-        className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-black"
+        className="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
       />
       <input
         type="email"
         placeholder="Email Address"
         required
-        className="w-full border rounded-md px-4 py-3 focus:ring-2 focus:ring-black"
+        className="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
       />
       <textarea
         placeholder="Tell us about your event..."
         required
-        className="w-full border rounded-md px-4 py-3 h-32 focus:ring-2 focus:ring-black"
+        className="w-full border rounded-md px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-black"
       />
       <button
         type="submit"
-        className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition"
+        className="w-full bg-black text-white py-3 rounded-md transition-colors hover:bg-gray-800"
       >
         Send Message
       </button>

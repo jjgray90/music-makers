@@ -18,11 +18,24 @@ export default function ContactPage() {
       </p>
 
       {!submitted ? (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <input className="w-full border rounded-md px-4 py-3" placeholder="Your Name" required />
-          <input type="email" className="w-full border rounded-md px-4 py-3" placeholder="Email Address" required />
-          <textarea className="w-full border rounded-md px-4 py-3" placeholder="Your Message" required />
-          <button type="submit" className="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition">
+        <form onSubmit={handleSubmit} className="space-y-6 text-left">
+          <input
+            className="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            className="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            placeholder="Email Address"
+            required
+          />
+          <textarea
+            className="w-full border rounded-md px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
+            placeholder="Your Message"
+            required
+          />
+          <button type="submit" className="w-full bg-black text-white py-3 rounded-md transition-colors hover:bg-gray-800">
             Send Message
           </button>
         </form>

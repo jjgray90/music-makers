@@ -13,7 +13,7 @@ export function Hero() {
           priority
           className="object-cover object-center brightness-90"
         />
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-xs"></div>
+        <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
       </div>
 
       {/* Content */}
@@ -30,13 +30,13 @@ export function Hero() {
         <div className="flex justify-center gap-4">
           <Link
             href="/artists"
-            className="bg-black text-white px-6 py-3 rounded-md text-base md:text-lg hover:bg-gray-800 transition"
+            className="bg-black text-white px-6 py-3 rounded-md text-base md:text-lg transition-colors hover:bg-gray-800"
           >
             Meet Our Artists
           </Link>
           <Link
             href="/contact"
-            className="border border-black px-6 py-3 rounded-md text-base md:text-lg hover:bg-black hover:text-white transition"
+            className="border border-black px-6 py-3 rounded-md text-base md:text-lg transition-colors hover:bg-black hover:text-white"
           >
             Book Your Event
           </Link>

@@ -36,7 +36,8 @@ export function ArtistDetail({ artist }: { artist: Artist }) {
           <a
             href={artist.instagram}
             target="_blank"
-            className="text-gray-700 hover:text-black underline"
+            rel="noreferrer noopener"
+            className="text-gray-700 underline transition-colors hover:text-black"
           >
             Instagram
           </a>
@@ -45,7 +46,8 @@ export function ArtistDetail({ artist }: { artist: Artist }) {
           <a
             href={artist.youtube}
             target="_blank"
-            className="text-gray-700 hover:text-black underline"
+            rel="noreferrer noopener"
+            className="text-gray-700 underline transition-colors hover:text-black"
           >
             YouTube
           </a>

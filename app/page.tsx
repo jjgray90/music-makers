@@ -22,7 +22,7 @@ export default async function HomePage() {
 
         <Link
           href="/artists"
-          className="mt-12 inline-block px-6 py-3 text-lg bg-black text-white rounded-md hover:bg-gray-800 transition"
+          className="mt-12 inline-block px-6 py-3 text-lg bg-black text-white rounded-md transition-colors hover:bg-gray-800"
         >
           View All Artists
         </Link>
