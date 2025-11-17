@@ -17,14 +17,22 @@ export function ArtistCard({ artist }: { artist: Artist }) {
       className="group block overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition"
     >
       <Image
-        src={urlFor(artist.image).width(400).url()}
+        src={urlFor(artist.image)
+          .width(1600) // higher base width
+          .height(1067) // keep aspect ratio-ish if you want
+          .fit("crop") // optional: crop to fit
+          .auto("format") // let Sanity pick WebP/AVIF etc
+          .quality(90) // bump quality if needed
+          .url()}
         alt={artist.name}
-        width={400}
-        height={300}
+        width={1600}
+        height={1067}
         className="h-64 w-full object-cover group-hover:scale-105 transition-transform"
       />
       <div className="p-4 text-center bg-white">
-        <h3 className="text-xl font-medium group-hover:text-black">{artist.name}</h3>
+        <h3 className="text-xl font-medium group-hover:text-black">
+          {artist.name}
+        </h3>
         <p className="text-gray-500">{artist.genre}</p>
       </div>
     </Link>
