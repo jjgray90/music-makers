@@ -158,13 +158,27 @@ export default function StickyBookingBar({
           </div>
 
           {/* Event Date */}
-          <input
-            required
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            className="w-full max-w-full min-w-0 px-3 py-2 border border-gray-300 rounded-md"
-          />
+          <div className="w-full min-w-0">
+            <label className="block text-sm font-medium mb-1">Event Date</label>
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="
+      w-full 
+      min-w-0 
+      max-w-full 
+      px-3 py-2 
+      border border-gray-300 
+      rounded-md 
+      focus:outline-none 
+      focus:ring-2 focus:ring-black
+      text-[16px]
+      box-border
+    "
+              placeholder="Event Date"
+            />
+          </div>
 
           {/* Message */}
           <div>
