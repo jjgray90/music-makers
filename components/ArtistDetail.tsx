@@ -2,6 +2,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/image";
 import type { Image as SanityImage } from "sanity";
 import { ArtistCarousel } from "./ArtistCarousel";
+import StickyBookingBar from "./StickyBookingBar";
 
 interface Artist {
   name: string;
@@ -19,7 +20,6 @@ export function ArtistDetail({ artist }: { artist: Artist }) {
 
   return (
     <article className="max-w-4xl mx-auto px-6 py-6">
-
       {/* HEADER */}
       <header className="text-center mb-6">
         <h1 className="text-5xl md:text-6xl font-serif font-medium tracking-wide mb-3">
@@ -78,7 +78,7 @@ export function ArtistDetail({ artist }: { artist: Artist }) {
           </div>
         </section>
       )}
-
+      <StickyBookingBar artistName={artist.name} />
     </article>
   );
 }
