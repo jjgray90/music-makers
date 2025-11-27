@@ -84,7 +84,7 @@ export default function StickyBookingBar({
 
       {/* SUCCESS MESSAGE */}
       {success && (
-        <div className="text-center text-green-700 font-semibold">
+        <div className="text-center text-gray-900 font-semibold">
           Thank you — your enquiry has been sent!
         </div>
       )}
@@ -147,7 +147,7 @@ export default function StickyBookingBar({
           {/* Phone (optional) */}
           <div>
             <label className="block text-sm font-medium mb-1">
-              Phone (optional)
+              Phone
             </label>
             <input
               type="tel"
