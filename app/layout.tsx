@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata = {
   title: "Music Makers | Wedding Music Agency",
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-white text-gray-900 font-sans">
         <Navbar />
         <main className="min-h-screen">{children}</main>
+        <CookieConsent />
         <Footer />
       </body>
     </html>

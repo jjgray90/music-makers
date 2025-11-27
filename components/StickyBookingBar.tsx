@@ -20,7 +20,7 @@ export default function StickyBookingBar({
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => setIsVisible(window.scrollY > 200);
+    const handleScroll = () => setIsVisible(window.scrollY > 100);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -101,6 +101,7 @@ export default function StickyBookingBar({
             bg-linear-to-r from-[#d4af37] to-[#e7d083]
             shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]
             hover:brightness-110
+            cursor-pointer
             transition-all
           "
         >
@@ -146,9 +147,7 @@ export default function StickyBookingBar({
 
           {/* Phone (optional) */}
           <div>
-            <label className="block text-sm font-medium mb-1">
-              Phone
-            </label>
+            <label className="block text-sm font-medium mb-1">Phone</label>
             <input
               type="tel"
               value={phone}
@@ -159,16 +158,13 @@ export default function StickyBookingBar({
           </div>
 
           {/* Event Date */}
-          <div>
-            <label className="block text-sm font-medium mb-1">Event Date</label>
-            <input
-              required
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md"
-            />
-          </div>
+          <input
+            required
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            className="w-full max-w-full min-w-0 px-3 py-2 border border-gray-300 rounded-md"
+          />
 
           {/* Message */}
           <div>
@@ -187,14 +183,14 @@ export default function StickyBookingBar({
             <button
               type="button"
               onClick={() => setOpenForm(false)}
-              className="text-sm text-gray-600 hover:underline"
+              className="text-sm text-gray-600 hover:underline cursor-pointer"
             >
               Close enquiry
             </button>
 
             <button
               type="submit"
-              className="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition"
+              className="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition cursor-pointer"
             >
               Send enquiry
             </button>

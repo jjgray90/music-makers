@@ -90,7 +90,7 @@ export function ArtistCarousel({ images }: Props) {
       <button
         onClick={scrollPrev}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-md text-black 
-        px-3 py-2 rounded-full hover:bg-white transition z-20"
+        px-3 py-2 rounded-full hover:bg-white transition z-20 cursor-pointer"
         aria-label="Previous"
       >
         ‹
@@ -99,7 +99,7 @@ export function ArtistCarousel({ images }: Props) {
       <button
         onClick={scrollNext}
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-md text-black 
-        px-3 py-2 rounded-full hover:bg-white transition z-20"
+        px-3 py-2 rounded-full hover:bg-white transition z-20 cursor-pointer"
         aria-label="Next"
       >
         ›
@@ -112,7 +112,7 @@ export function ArtistCarousel({ images }: Props) {
             <button
               key={i}
               onClick={() => scrollTo(i)}
-              className={`relative w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-2 transition 
+              className={`relative w-20 h-20 md:w-24 md:h-24 rounded-xl cursor-pointer overflow-hidden border-2 transition 
                 ${i === selectedIndex ? "border-black" : "border-transparent"}`}
             >
               <Image
