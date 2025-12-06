@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { urlFor } from "@/sanity/image";
 import type { Image as SanityImage } from "sanity";
@@ -11,19 +12,31 @@ interface Props {
 }
 
 export function ArtistCarousel({ images }: Props) {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+    },
+    [
+      Autoplay({
+        delay: 4000,
+        stopOnInteraction: true,
+        stopOnMouseEnter: true,
+      }),
+    ]
+  );
+
   const [thumbEmblaRef, thumbEmblaApi] = useEmblaCarousel({
     containScroll: "keepSnaps",
     dragFree: true,
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    if (thumbEmblaApi) thumbEmblaApi.scrollTo(emblaApi.selectedScrollSnap());
+    const index = emblaApi.selectedScrollSnap();
+    setSelectedIndex(index);
+    if (thumbEmblaApi) thumbEmblaApi.scrollTo(index);
   }, [emblaApi, thumbEmblaApi]);
 
   const scrollTo = useCallback(
@@ -34,26 +47,14 @@ export function ArtistCarousel({ images }: Props) {
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
-  // Auto-play
-  useEffect(() => {
-    if (!emblaApi) return;
-    const interval = setInterval(() => {
-      if (!isHovered) emblaApi.scrollNext();
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [emblaApi, isHovered]);
-
   useEffect(() => {
     if (!emblaApi) return;
     emblaApi.on("select", onSelect);
+    onSelect();
   }, [emblaApi, onSelect]);
 
   return (
-    <div
-      className="w-full mt-6 mb-6 relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="w-full mt-6 mb-6 relative">
       {/* MAIN CAROUSEL */}
       <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
         <div className="flex items-center transition-all duration-500 ease-out">
@@ -75,7 +76,7 @@ export function ArtistCarousel({ images }: Props) {
                   w-auto 
                   h-auto 
                   max-h-[450px] 
-                  md:max-h-[450px] 
+                  md:max-h-[550px] 
                   object-contain 
                   rounded-xl
                 "
@@ -112,7 +113,7 @@ export function ArtistCarousel({ images }: Props) {
             <button
               key={i}
               onClick={() => scrollTo(i)}
-              className={`relative w-20 h-20 md:w-24 md:h-24 rounded-xl cursor-pointer overflow-hidden border-2 transition 
+              className={`relative w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden border-2 transition 
                 ${i === selectedIndex ? "border-black" : "border-transparent"}`}
             >
               <Image
