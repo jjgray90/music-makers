@@ -22,6 +22,7 @@ export default function StickyBookingBar({
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState("");
+  const [location, setLocation] = useState("");
   const [message, setMessage] = useState("");
 
   // Show once user has scrolled a bit
@@ -77,6 +78,7 @@ export default function StickyBookingBar({
         name,
         email,
         date,
+        location,
         message,
         phone,
       }),
@@ -98,6 +100,7 @@ export default function StickyBookingBar({
       setName("");
       setEmail("");
       setPhone("");
+      setLocation("");
       setMessage("");
       setDate("");
     } else {
@@ -132,7 +135,7 @@ export default function StickyBookingBar({
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4 pointer-events-none"
           }
-          z-[999]
+          z-999
         `}
       >
         <div className="relative p-5 flex flex-col gap-4">
@@ -158,7 +161,7 @@ export default function StickyBookingBar({
                 rounded-md 
                 text-white 
                 font-medium 
-                bg-gradient-to-r from-[#d4af37] to-[#e7d083]
+                bg-linear-to-r from-[#d4af37] to-[#e7d083]
                 shadow-[inset_0_1px_0_rgba(255,255,255,0.4)]
                 hover:brightness-110
                 cursor-pointer
@@ -240,6 +243,20 @@ export default function StickyBookingBar({
                     text-[16px]
                     box-border
                   "
+                />
+              </div>
+
+              {/* Message */}
+              <div>
+                <label className="block text-sm font-medium mb-1">
+                  Location
+                </label>
+                <input
+                  required
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                  placeholder="Where is your event?"
                 />
               </div>
 

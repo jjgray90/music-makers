@@ -5,6 +5,7 @@ interface EmailProps {
   name: string;
   email: string;
   date: string;
+  location: string;
   message: string;
   phone?: string;
 }
@@ -15,6 +16,7 @@ export default function ArtistEnquiryEmail({
   email,
   phone,
   date,
+  location,
   message,
 }: EmailProps) {
   return (
@@ -46,6 +48,10 @@ export default function ArtistEnquiryEmail({
 
       <p>
         <strong>Event date:</strong> {date}
+      </p>
+
+      <p>
+        <strong>Location:</strong> {location}
       </p>
 
       <p>

@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     //   );
     // }
 
-    const { artist, name, email, date, message, phone } = await req.json();
+    const { artist, name, email, date, location, message, phone } = await req.json();
 
     await resend.emails.send({
       from: "Music Makers <no-reply@music-makers.co.uk>",
@@ -42,6 +42,7 @@ export async function POST(req: Request) {
         name,
         email,
         date,
+        location,
         message,
         phone,
       }),
